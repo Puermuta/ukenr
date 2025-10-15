@@ -9,3 +9,10 @@ body {
       font-size: 5em;
       color: #333;
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #111;
+    color: #fff;
+  }
+}

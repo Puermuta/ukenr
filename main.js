@@ -7,6 +7,6 @@ function getWeekNumber(date) {
     }
 
 const weekNum = getWeekNumber(new Date());
-const weekString = `Week ${weekNum}`
+const weekString = `Uke ${weekNum}`
 document.getElementById("week-container").textContent = weekString;
 document.title = weekString;

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week number</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f9fafb;
+      font-family: system-ui, sans-serif;
+      font-size: 5em;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div id="week"></div>
+
+  <script>
+    function getWeekNumber(date) {
+      const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+      const dayNum = d.getUTCDay() || 7;
+      d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+      const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+      return Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
+    }
+
+    const weekNum = getWeekNumber(new Date());
+    const weekString = `Week ${weekNum}`
+    document.getElementById("week").textContent = weekString;
+    document.title = weekString;
+  </script>
+</body>
+</html>
+

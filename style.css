@@ -1,0 +1,11 @@
+body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f9fafb;
+      font-family: system-ui, sans-serif;
+      font-size: 5em;
+      color: #333;
+}
